@@ -7,15 +7,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import useFetchGames from "../hooks/useFetchGames";
 
 const Swipe = () => {
-  /*   const cards = document.querySelectorAll(".card__swiper")
-
-  cards.forEach(card => {
-    const cardAfter = window.getComputedStyle(card, "::after")
-    console.log(cardAfter.backgroundImage = "https")
-  }) */
-
+  const { data: games } = useFetchGames(12);
   return (
     <Swiper
       className="swiper"
@@ -56,15 +51,16 @@ const Swipe = () => {
         },
       }}
     >
-      <SwiperSlide className="swiper-slide card__swiper"></SwiperSlide>
-      <SwiperSlide className="swiper-slide card__swiper"></SwiperSlide>
-      <SwiperSlide className="swiper-slide card__swiper"></SwiperSlide>
-      <SwiperSlide className="swiper-slide card__swiper"></SwiperSlide>
-      <SwiperSlide className="swiper-slide card__swiper"></SwiperSlide>
-      <SwiperSlide className="swiper-slide card__swiper"></SwiperSlide>
-      <SwiperSlide className="swiper-slide card__swiper"></SwiperSlide>
-      <SwiperSlide className="swiper-slide card__swiper"></SwiperSlide>
-      <SwiperSlide className="swiper-slide card__swiper"></SwiperSlide>
+      {games.map((game) => (
+        <SwiperSlide className="swiper-slide card__swiper" key={game.id}>
+          <div
+            className="card__swiper-img"
+            style={{ backgroundImage: `url(${game.image})` }}
+          >
+            <p className="card__swiper-name">{game.name}</p>
+          </div>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };

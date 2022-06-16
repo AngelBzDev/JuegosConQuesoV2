@@ -1,8 +1,9 @@
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
+import NewGames from "./components/NewGames";
 import PopularGames from "./components/PopularGames";
 import Swipe from "./components/Swipe";
-import getGames from "./helpers/getGames";
+
 import "./styles/normalize.css";
 import "./styles/styles.css";
 
@@ -19,7 +20,7 @@ const App = () => {
           <PopularGames />
         </section>
         <section className="container mb-2">
-          <h3>Game</h3>
+          <NewGames />
         </section>
       </main>
     </>
