@@ -22,6 +22,20 @@ body {
   height: 100vh;
 }
 
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--background);        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--yellow);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid var(--background);  /* creates padding around scroll thumb */
+}
+
 /********************** Helpers ************************/
 
 .title {
@@ -99,7 +113,7 @@ body {
   justify-content: space-between;
 }
 
-.mt-3{
+.mt-3 {
   margin-top: 3rem;
 }
 
@@ -302,7 +316,7 @@ img.logo {
 .card__swiper-name {
   display: none;
   font-weight: 600;
-  margin-left: .8rem;
+  margin-left: 0.8rem;
   font-size: 1rem;
   color: var(--yellow);
 }
@@ -360,11 +374,61 @@ p {
   font-weight: 500;
 }
 
-
-.new__games{
+.new__games {
   width: 100%;
   background: url(../assets/background_orange.jpg);
   border-radius: 10px;
   padding: 2rem;
-  filter: brightness(50%);
+  display: flex;
+  align-items: center;
+}
+
+.new__games--title {
+  color: var(--background);
+  font-weight: 700;
+}
+
+.new__games--text{
+  font-size: 1.0rem;
+  color: var(--background);
+  font-weight: 500;
+}
+
+.new__games--cards{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.new__games--card{
+  background: var(--background);
+  opacity: .8;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 9;
+}
+
+.new__games--image{
+  width: auto;
+  height: 63.65px;
+  border-radius: 8px;
+  margin: 1.5rem auto;
+  opacity: 1;
+  position: relative;
+  z-index: 10;
+}
+
+.new__games--card:hover{
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.new__games--info{
+  width: 70%;
+  margin-right: 2rem;
 }

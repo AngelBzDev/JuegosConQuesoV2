@@ -19,9 +19,9 @@ const App = () => {
         <section className="container mb-2">
           <PopularGames />
         </section>
-        <section className="container mb-2">
+        {/* <section className="container mb-2">
           <NewGames />
-        </section>
+        </section> */}
       </main>
     </>
   );

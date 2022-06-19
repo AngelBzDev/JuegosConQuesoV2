@@ -7,7 +7,7 @@ import SubTitle from "./SubTitle";
 
 const PopularGames = () => {
   const sizeWindow = useSizeWindow();
-  const { data: games } = useFetchGames(8);
+  const { data: games } = useFetchGames(150);
 
   return (
     <div>
