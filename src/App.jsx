@@ -1,29 +1,18 @@
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import NewGames from "./components/NewGames";
-import PopularGames from "./components/PopularGames";
-import Swipe from "./components/Swipe";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import GameScreen from "./components/GameScreen";
 
 import "./styles/normalize.css";
 import "./styles/styles.css";
 
 const App = () => {
   return (
-    <>
-      <header>
-        <Navbar />
-        <Header />
-        <Swipe />
-      </header>
-      <main>
-        <section className="container mb-2">
-          <PopularGames />
-        </section>
-        {/* <section className="container mb-2">
-          <NewGames />
-        </section> */}
-      </main>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="games/:id" element={<GameScreen />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 

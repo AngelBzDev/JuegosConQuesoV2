@@ -1,5 +1,3 @@
-import React from "react";
-import getGames from "../helpers/getGames";
 import useFetchGames from "../hooks/useFetchGames";
 import useSizeWindow from "../hooks/useSizeWindow";
 import PopularGame from "./PopularGame";
@@ -16,7 +14,7 @@ const PopularGames = () => {
         {sizeWindow > 768
           ? games.map((game) => <PopularGame key={game.id} {...game} />)
           : games
-              .slice(0, 4)
+              .slice(0, 100)
               .map((game) => <PopularGame key={game.id} {...game} />)}
       </div>
     </div>
